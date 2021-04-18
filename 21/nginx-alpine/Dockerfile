@@ -11,4 +11,6 @@ ENV PHP_UPLOAD_LIMIT=4096M
 EXPOSE 80
 EXPOSE 443
 
-CMD ["nginx", "-g", "daemon off;"]
+ADD ./start.sh /start.sh
+RUN chmod 755 /start.sh
+CMD ["/bin/sh", "/start.sh"]
