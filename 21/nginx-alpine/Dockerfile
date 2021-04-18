@@ -13,4 +13,5 @@ EXPOSE 443
 
 STOPSIGNAL SIGQUIT
 
+CMD ["php-fpm"]
 CMD ["nginx", "-g", "daemon off;"]
