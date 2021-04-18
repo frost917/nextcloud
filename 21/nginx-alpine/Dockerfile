@@ -11,7 +11,4 @@ ENV PHP_UPLOAD_LIMIT=4096M
 EXPOSE 80
 EXPOSE 443
 
-STOPSIGNAL SIGQUIT
-
-CMD ["php-fpm"]
 CMD ["nginx", "-g", "daemon off;"]
