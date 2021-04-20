@@ -3,7 +3,7 @@ FROM nextcloud:21.0.1-fpm-alpine
 RUN deluser www-data && addgroup -g 1000 -S www-data \ 
     && adduser -S -D -H -u 500 -s /sbin/nologin www-data 
 
-RUN apk add --no-cache samba-client nginx
+RUN apk add --no-cache samba-client nginx busybox
 
 WORKDIR /usr/src/nextcloud
 
