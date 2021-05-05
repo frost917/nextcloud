@@ -7,6 +7,10 @@ RUN apk update \
     && apk add --no-cache samba-client busybox imagemagick nginx
 RUN cp -rapv /usr/src/nextcloud /var/www/html
 
+RUN pecl install -o -f redis \
+    &&  rm -rf /tmp/pear \
+    &&  docker-php-ext-enable redis
+
 ENV PHP_MEMORY_LIMIT=4096M
 ENV PHP_UPLOAD_LIMIT=4096M
 
