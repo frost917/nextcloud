@@ -4,11 +4,7 @@ RUN deluser www-data && addgroup -g 1000 -S www-data \
     && adduser -S -D -H -u 101 -s /sbin/nologin www-data 
 
 RUN apk update \
-    && add --no-cache --no-install-recommends samba-client busybox imagick
-
-RUN pecl install -o -f redis \
-    &&  rm -rf /tmp/pear \
-    &&  docker-php-ext-enable redis 
+    && apk add --no-cache --no-install-recommends samba-client busybox imagick
 
 RUN cp -rapv /usr/src/nextcloud /var/www/html
 
