@@ -1,12 +1,12 @@
-FROM nextcloud:21-fpm-alpine
+FROM nextcloud:fpm-alpine
 
 ENV NEXTCLOUD_PATH="/var/www/html"
 
 RUN deluser www-data && addgroup -g 1000 -S www-data \ 
-    && adduser -S -D -H -u 101 -s /sbin/nologin www-data 
+    && adduser -S -D -H -u 1000 -s /sbin/nologin www-data 
 
 RUN apk update \
-    && apk add --no-cache samba-client busybox imagemagick ffmpeg clamav clamav-daemon unrar
+    && apk add --no-cache samba-client busybox imagemagick ffmpeg clamav unrar
 
 RUN mkdir ${NEXTCLOUD_PATH}/data ${NEXTCLOUD_PATH}/config ${NEXTCLOUD_PATH}/custom_apps ${NEXTCLOUD_PATH}/themes
 
