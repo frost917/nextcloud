@@ -21,8 +21,9 @@ RUN set -ex; \
         "https://download.nextcloud.com/server/releases/nextcloud-${NEXTCLOUD_VERSION}.tar.bz2.asc"; \
     export GNUPGHOME="$(mktemp -d)"; \
 # gpg key from https://nextcloud.com/nextcloud.asc
-    gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys 28806A878AE423A28372792ED75899B9A724937A; \
-    gpg --batch --verify nextcloud.tar.bz2.asc nextcloud.tar.bz2; \
+# gpg key 서버가 죽어서 임시로 지움
+    #gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys 28806A878AE423A28372792ED75899B9A724937A; \
+    #gpg --batch --verify nextcloud.tar.bz2.asc nextcloud.tar.bz2; \
     mkdir -p /var/www/; \
     tar -xjf nextcloud.tar.bz2 -C /var/www/; \
     mv -v /var/www/nextcloud/ /var/www/html; \

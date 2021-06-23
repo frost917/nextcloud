@@ -6,13 +6,13 @@ ver="21"
 cd  ${gitDir}/${ver}/nginx-alpine/
 docker buildx build \
     --push \
-    --platform=linux/arm64,linux/amd64 \
+    --platform=linux/arm64/v8,linux/amd64 \
     -t ${REGISTER}/nextcloud:${ver}-nginx-alpine \
     ./ 
 
 cd ${gitDir}/${ver}/fpm-alpine/
 docker buildx build \
     --push \
-    --platform=linux/arm64,linux/amd64 \
+    --platform=linux/arm64/v8,linux/amd64 \
     -t ${REGISTER}/nextcloud:${ver}-fpm-alpine \
     ./
