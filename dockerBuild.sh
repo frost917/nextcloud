@@ -7,12 +7,12 @@ cd  ${gitDir}/${ver}/nginx-alpine/
 docker buildx build \
     --push \
     --platform=linux/arm64/v8,linux/amd64 \
-    -t ${REGISTER}/nextcloud:${ver}-nginx-alpine \
+    -t ${REGISTRY}/nextcloud:${ver}-nginx-alpine \
     ./ 
 
 cd ${gitDir}/${ver}/fpm-alpine/
 docker buildx build \
     --push \
     --platform=linux/arm64/v8,linux/amd64 \
-    -t ${REGISTER}/nextcloud:${ver}-fpm-alpine \
+    -t ${REGISTRY}/nextcloud:${ver}-fpm-alpine \
     ./
