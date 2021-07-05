@@ -1,7 +1,7 @@
 FROM nginx:alpine
 
 ENV NEXTCLOUD_PATH="/var/www/html"
-ENV NEXTCLOUD_VERSION 21.0.2
+ENV NEXTCLOUD_VERSION 21.0.3
 
 RUN deluser nginx && addgroup -g 1000 -S nginx \ 
     && adduser -S -D -H -u 1000 -s /sbin/nologin nginx 
