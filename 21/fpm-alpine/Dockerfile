@@ -1,4 +1,4 @@
-FROM nextcloud:21.0.3-fpm-alpine
+FROM nextcloud:21.0.4-fpm-alpine
 
 ENV NEXTCLOUD_PATH="/var/www/html"
 

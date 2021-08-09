@@ -1,7 +1,7 @@
 ﻿#!/bin/bash 
 gitDir=$(dirname $(realpath $0))
 ver="21"
-specVer="21.0.3"
+specVer="21.0.4"
 
 #  build
 cd  ${gitDir}/${ver}/nginx-alpine/
