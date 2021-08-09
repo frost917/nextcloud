@@ -6,7 +6,7 @@ RUN deluser www-data && addgroup -g 1000 -S www-data \
     && adduser -S -D -H -u 1000 -s /sbin/nologin www-data 
 
 RUN apk update \
-    && apk add --no-cache samba-client imagemagick ffmpeg clamav unrar
+    && apk add --no-cache samba-client imagemagick ffmpeg unrar
 
 WORKDIR ${NEXTCLOUD_PATH}
 

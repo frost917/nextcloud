@@ -31,7 +31,7 @@ RUN set -ex; \
     mkdir -p /nextcloud/themes; \
     apk del .fetch-deps
 
-FROM nginx:alpine AS run
+FROM nginx:mainline-alpine AS run
 
 ENV NEXTCLOUD_PATH="/var/www/html" \ 
     NEXTCLOUD_VERSION=21.0.4
