@@ -1,6 +1,6 @@
 FROM alpine AS download
 
-ENV NEXTCLOUD_VERSION=22.0.0
+ENV NEXTCLOUD_VERSION=22.1.1
 
 WORKDIR /
 
@@ -34,7 +34,7 @@ RUN set -ex; \
 FROM nginx:alpine AS run
 
 ENV NEXTCLOUD_PATH="/var/www/html" \ 
-    NEXTCLOUD_VERSION=21.0.3
+    NEXTCLOUD_VERSION=22.1.1
 
 RUN deluser nginx && addgroup -g 1000 -S nginx \ 
     && adduser -S -D -H -u 1000 -s /sbin/nologin nginx 
